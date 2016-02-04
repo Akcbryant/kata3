@@ -2,35 +2,34 @@
   (:require [speclj.core :refer :all]
             [kata3.core :refer :all]))
 
-(describe "Return a list of all factors of a number"
-  (it "1 has 1 factor"
+(describe "Return a list of the factors for a number"
+  (it "1"
     (should= [1] (factors 1)))
-  (it "2 has 2 factors"
+  (it "2"
     (should= [1 2] (factors 2)))
-  (it "8 has 4 factors"
-    (should= [1 2 4 8] (factors 8))))
+  (it "3"
+    (should= [1 3] (factors 3)))
+  (it "10"
+    (should= [1 2 5 10] (factors 10))))
 
-(describe "Return true if the number is a prime"
-  (it "1 is not a prime"
+(describe "Return true if the number is prime"
+  (it "1"
     (should= false (prime? 1)))
-  (it "2 is the only even prime"
+  (it "2"
     (should= true (prime? 2)))
-  (it "even numbers above 2 are not prime"
-    (should= false (prime? 6)))
-  (it "for everything else check for prime up to sqrt of number"
-    (should= true (prime? 13))))
+  (it "3"
+    (should= true (prime? 3)))
+  (it "4"
+    (should= false (prime? 4)))
+  (it "5"
+    (should= true (prime? 5)))
+  (it "73"
+    (should= true (prime? 73))))
 
-(describe "Returns the primes of a number"
-  (it "1 has no prime factors"
+(describe "Return a list of prime factors for the number"
+  (it "1"
     (should= [] (prime-factors 1)))
-  (it "2 has one prime factor"
+  (it "2"
     (should= [2] (prime-factors 2)))
-  (it "3 has one prime factor"
-    (should= [3] (prime-factors 3)))
-  (it "4 has two prime factors but they are duplicates"
-    (should= [2] (prime-factors 4)))
-  (it "9 has three prime factors they are all duplicates"
-    (should= [3] (prime-factors 9)))
-  (it "78 is a good test"
-    (should= [2 3 13] (prime-factors 78))))
-
+  (it "10"
+    (should= [2 5] (prime-factors 10))))
